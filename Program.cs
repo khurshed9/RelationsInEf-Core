@@ -1,4 +1,5 @@
-﻿
+﻿    
+using Microsoft.EntityFrameworkCore;
 using Relations.DataContext;
 using Relations.Entities;
 
@@ -15,7 +16,7 @@ using (AppDbContext db = new AppDbContext())
     db.Profiles.AddRange(profile1, profile2);
     db.SaveChanges();
 
-    foreach (var user in db.Users.ToList())
+    foreach (var user in db.Users.Include(u=>u.Profile).ToList())
     {
         Console.WriteLine($"User {user.Name}, his profile {user.Profile.UserName}");
     }
