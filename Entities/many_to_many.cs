@@ -8,7 +8,7 @@ public class Student
     
     public string LastName { get; set; } = null!;
 
-    public ICollection<StudentGroup> StudentGroups { get; set; } = null!;
+    public ICollection<StudentGroup> StudentGroups { get; set; } = [];
 }
 
 public class StudentGroup
@@ -28,5 +28,5 @@ public class Group
 
     public string Name { get; set; }=null!;
 
-    public ICollection<StudentGroup> StudentGroups { get; set; } =null!;
+    public ICollection<StudentGroup> StudentGroups { get; set; } = [];
 }
